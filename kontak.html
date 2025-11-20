@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kontak - PropertyLand</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="logo">🏡 MahkotaLand</div>
+      <nav>
+        <a href="index.html" class="active" onclick="showSection('home')"
+          >Beranda</a
+        >
+        <a href="tentang.html" onclick="showSection('about')">Tentang</a>
+        <a href="kontak.html" onclick="showSection('contact')">Kontak</a>
+        <a href="login.html" onclick="logout(event)">Keluar</a>
+      </nav>
+    </header>
+
+    <section class="contact">
+      <h2>Hubungi Kami</h2>
+      <p>
+        Butuh bantuan atau ingin tahu lebih banyak tentang properti kami?
+        Silakan hubungi kami melalui formulir di bawah ini.
+      </p>
+
+      <form class="contact-form">
+        <label>Nama Lengkap</label>
+        <input type="text" placeholder="Masukkan nama Anda" required />
+
+        <label>Email</label>
+        <input type="email" placeholder="Masukkan email Anda" required />
+
+        <label>Pesan</label>
+        <textarea
+          rows="5"
+          placeholder="Tulis pesan Anda..."
+          required
+        ></textarea>
+
+        <button type="submit">Kirim Pesan</button>
+      </form>
+
+      <div class="contact-info">
+        <h3>Atau hubungi langsung:</h3>
+        <p>📞 Telepon: +62 812-3456-7890</p>
+        <p>📧 Email: info@propertyland.id</p>
+        <p>📍 Alamat: Jl. Merdeka No. 45, Jakarta Pusat, Indonesia</p>
+        <a
+          href="https://wa.me/6281234567890"
+          target="_blank"
+          class="whatsapp-btn"
+          >💬 Hubungi via WhatsApp</a
+        >
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2025 PropertyLand | Semua Hak Dilindungi</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

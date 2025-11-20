@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MahkotaLand - Rumah Impian Anda</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body onload="checkLogin()">
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo">🏡 MahkotaLand</div>
+    <nav>
+      <a href="#" class="active" onclick="showSection('home')">Beranda</a>
+      <a href="tentang.html" onclick="showSection('about')">Tentang</a>
+      <a href="kontak.html" onclick="showSection('contact')">Kontak</a>
+      <a href="login.html" onclick="logout(event)">Keluar</a>
+
+    </nav>
+  </header>
+
+  <!-- BERANDA -->
+
+
+    <div class="banner-text">
+      <h1>Temukan Hunian Impian Anda</h1>
+      <p>MahkotaLand menghadirkan berbagai pilihan rumah modern, minimalis, dan mewah untuk keluarga Anda.</p>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="search-container">
+      <input type="text" id="searchInput" placeholder="Cari rumah, villa, atau apartemen..." onkeyup="searchProperty()">
+    </div>
+
+    <h2 class="section-title">🏘️ Pilihan Properti Populer</h2>
+  <div class="property-grid" id="propertyGrid">
+
+  <div class="property-card" data-name="Griya Harmoni" data-location="Jakarta" data-map="https://www.google.com/maps?q=Jakarta">
+    <img src="images/rumah1.jpg" alt="Griya Harmoni">
+    <h3>Griya Harmoni</h3>
+    <p>Lokasi: Jakarta</p>
+    <p>Mulai dari <strong>Rp 450 Juta</strong></p>
+    <div class="card-buttons">
+      <button onclick="contactWA('Griya Harmoni')">Hubungi via WhatsApp</button>
+      <button class="map-btn" onclick="openMap('https://www.google.com/maps?q=Jakarta')">Lihat Lokasi</button>
+    </div>
+  </div>
+
+  <div class="property-card" data-name="Villa Tropis Indah" data-location="Bali" data-map="https://www.google.com/maps?q=Bali">
+    <img src="images/rumah2.jpg" alt="Villa Tropis Indah">
+    <h3>Villa Tropis Indah</h3>
+    <p>Lokasi: Bali</p>
+    <p>Mulai dari <strong>Rp 900 Juta</strong></p>
+    <div class="card-buttons">
+      <button onclick="contactWA('Villa Tropis Indah')">Hubungi via WhatsApp</button>
+      <button class="map-btn" onclick="openMap('https://www.google.com/maps?q=Bali')">Lihat Lokasi</button>
+    </div>
+  </div>
+
+  <div class="property-card" data-name="Cluster Mewah Sentosa" data-location="Surabaya" data-map="https://www.google.com/maps?q=Surabaya">
+    <img src="images/rumah3.jpg" alt="Cluster Mewah Sentosa">
+    <h3>Cluster Mewah Sentosa</h3>
+    <p>Lokasi: Surabaya</p>
+    <p>Mulai dari <strong>Rp 1,3 M</strong></p>
+    <div class="card-buttons">
+      <button onclick="contactWA('Cluster Mewah Sentosa')">Hubungi via WhatsApp</button>
+      <button class="map-btn" onclick="openMap('https://www.google.com/maps?q=Surabaya')">Lihat Lokasi</button>
+    </div>
+  </div>
+
+  <div class="property-card" data-name="SkyView Apartemen" data-location="Jakarta" data-map="https://www.google.com/maps?q=Jakarta">
+    <img src="images/rumah4.jpg" alt="SkyView Apartemen">
+    <h3>SkyView Apartemen</h3>
+    <p>Lokasi: Jakarta</p>
+    <p>Mulai dari <strong>Rp 850 Juta</strong></p>
+    <div class="card-buttons">
+      <button onclick="contactWA('SkyView Apartemen')">Hubungi via WhatsApp</button>
+      <button class="map-btn" onclick="openMap('https://www.google.com/maps?q=Jakarta')">Lihat Lokasi</button>
+    </div>
+  </div>
+
+  <div class="property-card" data-name="Ocean Breeze" data-location="Lombok" data-map="https://www.google.com/maps?q=Lombok">
+    <img src="images/rumah5.jpg" alt="Ocean Breeze">
+    <h3>Ocean Breeze</h3>
+    <p>Lokasi: Lombok</p>
+    <p>Mulai dari <strong>Rp 2 M</strong></p>
+    <div class="card-buttons">
+      <button onclick="contactWA('Ocean Breeze')">Hubungi via WhatsApp</button>
+      <button class="map-btn" onclick="openMap('https://www.google.com/maps?q=Lombok')">Lihat Lokasi</button>
+    </div>
+  </div>
+
+  <div class="property-card" data-name="Perumahan Asri" data-location="Bandung" data-map="https://www.google.com/maps?q=Bandung">
+    <img src="images/rumah6.jpg" alt="Perumahan Asri">
+    <h3>Perumahan Asri</h3>
+    <p>Lokasi: Bandung</p>
+    <p>Mulai dari <strong>Rp 600 Juta</strong></p>
+    <div class="card-buttons">
+      <button onclick="contactWA('Perumahan Asri')">Hubungi via WhatsApp</button>
+      <button class="map-btn" onclick="openMap('https://www.google.com/maps?q=Bandung')">Lihat Lokasi</button>
+    </div>
+  </div>
+
+  <div class="property-card" data-name="Bukit Hijau Residence" data-location="Yogyakarta" data-map="https://www.google.com/maps?q=Yogyakarta">
+    <img src="images/rumah7.jpg" alt="Bukit Hijau Residence">
+    <h3>Bukit Hijau Residence</h3>
+    <p>Lokasi: Yogyakarta</p>
+    <p>Mulai dari <strong>Rp 700 Juta</strong></p>
+    <div class="card-buttons">
+      <button onclick="contactWA('Bukit Hijau Residence')">Hubungi via WhatsApp</button>
+      <button class="map-btn" onclick="openMap('https://www.google.com/maps?q=Yogyakarta')">Lihat Lokasi</button>
+    </div>
+  </div>
+
+  <div class="property-card" data-name="Emerald Garden" data-location="Medan" data-map="https://www.google.com/maps?q=Medan">
+    <img src="images/rumah8.jpg" alt="Emerald Garden">
+    <h3>Emerald Garden</h3>
+    <p>Lokasi: Medan</p>
+    <p>Mulai dari <strong>Rp 950 Juta</strong></p>
+    <div class="card-buttons">
+      <button onclick="contactWA('Emerald Garden')">Hubungi via WhatsApp</button>
+      <button class="map-btn" onclick="openMap('https://www.google.com/maps?q=Medan')">Lihat Lokasi</button>
+    </div>
+  </div>
+
+  <div class="property-card" data-name="Taman Seroja" data-location="Bekasi" data-map="https://www.google.com/maps?q=Bekasi">
+    <img src="images/rumah9.jpg" alt="Taman Seroja">
+    <h3>Taman Seroja</h3>
+    <p>Lokasi: Bekasi</p>
+    <p>Mulai dari <strong>Rp 550 Juta</strong></p>
+    <div class="card-buttons">
+      <button onclick="contactWA('Taman Seroja')">Hubungi via WhatsApp</button>
+      <button class="map-btn" onclick="openMap('https://www.google.com/maps?q=Bekasi')">Lihat Lokasi</button>
+    </div>
+  </div>
+
+  <div class="property-card" data-name="Citra Raya Hills" data-location="Tangerang" data-map="https://www.google.com/maps?q=Tangerang">
+    <img src="images/rumah10.jpg" alt="Citra Raya Hills">
+    <h3>Citra Raya Hills</h3>
+    <p>Lokasi: Tangerang</p>
+    <p>Mulai dari <strong>Rp 780 Juta</strong></p>
+    <div class="card-buttons">
+      <button onclick="contactWA('Citra Raya Hills')">Hubungi via WhatsApp</button>
+      <button class="map-btn" onclick="openMap('https://www.google.com/maps?q=Tangerang')">Lihat Lokasi</button>
+    </div>
+  </div>
+
+  <div class="property-card" data-name="Golden Park Residence" data-location="Palembang" data-map="https://www.google.com/maps?q=Palembang">
+    <img src="images/rumah11.jpg" alt="Golden Park Residence">
+    <h3>Golden Park Residence</h3>
+    <p>Lokasi: Palembang</p>
+    <p>Mulai dari <strong>Rp 1 M</strong></p>
+    <div class="card-buttons">
+      <button onclick="contactWA('Golden Park Residence')">Hubungi via WhatsApp</button>
+      <button class="map-btn" onclick="openMap('https://www.google.com/maps?q=Palembang')">Lihat Lokasi</button>
+    </div>
+  </div>
+
+  <div class="property-card" data-name="Grand Nusantara" data-location="Semarang" data-map="https://www.google.com/maps?q=Semarang">
+    <img src="images/rumah12.jpg" alt="Grand Nusantara">
+    <h3>Grand Nusantara</h3>
+    <p>Lokasi: Semarang</p>
+    <p>Mulai dari <strong>Rp 1,2 M</strong></p>
+    <div class="card-buttons">
+      <button onclick="contactWA('Grand Nusantara')">Hubungi via WhatsApp</button>
+      <button class="map-btn" onclick="openMap('https://www.google.com/maps?q=Semarang')">Lihat Lokasi</button>
+    </div>
+  </div>
+
+</div>
+
+  
+  <!-- Tambahkan properti lain dengan format yang sama -->
+</div>
+
+  <!-- TENTANG -->
+  <section id="about" class="section">
+    <div class="about-container">
+      <img src="https://source.unsplash.com/600x400/?architecture" alt="Tentang Kami" />
+      <div class="about-text">
+        <h2>Tentang MahkotaLand</h2>
+        <p>
+          MahkotaLand adalah platform penyedia informasi properti terpercaya di Indonesia.  
+          Kami membantu masyarakat menemukan hunian terbaik dengan harga kompetitif dan layanan profesional.
+        </p>
+        <p>
+          Didirikan pada tahun 2021, kami telah bekerja sama dengan berbagai pengembang ternama untuk menyediakan rumah impian bagi ribuan keluarga.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- KONTAK -->
+  <section id="contact" class="section contact-section">
+    <h2>Hubungi Kami</h2>
+    <p>Tim kami siap membantu Anda 24/7 untuk menemukan hunian terbaik.</p>
+    <div class="contact-box">
+      <div class="contact-item">
+        <h3>📍 Alamat</h3>
+        <p>Jl. Merdeka No.45, Jakarta barat</p>
+      </div>
+      <div class="contact-item">
+        <h3>📞 Telepon</h3>
+        <p>+62 857 7864 8703</p>
+      </div>
+      <div class="contact-item">
+        <h3>💬 WhatsApp</h3>
+        <button onclick="contactWA('Customer Service')">Chat Sekarang</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 MahkotaLand</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
